@@ -1,0 +1,71 @@
+{
+  "name": "utter-sdk",
+  "version": "0.2.1",
+  "description": "Your users ask, and your app changes for them: their own look, and the work done inside your app, as them.",
+  "license": "MIT",
+  "homepage": "https://www.utter.talk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uttertalk/sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uttertalk/sdk/issues"
+  },
+  "keywords": [
+    "saas",
+    "voice",
+    "assistant",
+    "ai",
+    "speech",
+    "react",
+    "nextjs",
+    "cli",
+    "claude-code",
+    "cursor"
+  ],
+  "type": "module",
+  "bin": {
+    "utter-sdk": "dist/cli.js"
+  },
+  "exports": {
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "default": "./dist/server.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "default": "./dist/react.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
+    }
+  },
+  "files": [
+    "dist",
+    "skill",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node --test test/server.test.mjs test/cli.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "typescript": "^5"
+  }
+}
