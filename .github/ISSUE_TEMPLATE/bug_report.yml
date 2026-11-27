@@ -1,0 +1,25 @@
+name: Bug report
+description: Something doesn't work the way the docs say it should
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did or said, what you expected, and what happened instead. Paste any error. Leave out your project secret and your users' data.
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: Code
+      description: The smallest piece of your setup that shows the problem (action list, action, getViewer or component).
+      render: ts
+  - type: input
+    id: env
+    attributes:
+      label: Versions
+      description: utter-sdk, Node, React, framework and browser
+      placeholder: "utter-sdk 0.1.0, Node 22, React 19, Next.js 16, Chrome 142"
+    validations:
+      required: true
